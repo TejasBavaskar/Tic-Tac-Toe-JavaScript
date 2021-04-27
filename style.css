@@ -114,3 +114,35 @@ body {
   height: calc(var(--mark-size)*0.7);
   background-color: rgb(172, 172, 96);
 }
+
+.win-msg {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgba(24, 23, 23, 0.8);
+  flex-direction: column;
+  color: white;
+  font-size: 50px;
+}
+
+.win-msg button {
+  cursor: pointer;
+  font-size: 2rem;
+  font-family: 'Cinzel', serif;
+  padding: 5px 5px;
+  border-radius: 15px;
+}
+.win-msg button:hover {
+  background-color: black;
+  padding: 15px 15px;
+  color: white;
+}
+
+.win-msg.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
