@@ -4,7 +4,7 @@ body {
 
 :root {
   --cell-size: 100px;
-  --mark-size: cal(var(--cell-size) * 0.9);
+  --mark-size: calc(var(--cell-size) * 0.9);
 }
 
 .board {
@@ -14,8 +14,6 @@ body {
   display: grid;
   justify-content: center;
   align-content: center;
-  justify-items: center;
-  align-items: center;
   grid-template-columns: repeat(3, auto);
 }
 
@@ -24,6 +22,10 @@ body {
   height: var(--cell-size);
   background-color: rgb(172, 172, 96);
   border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .cell:nth-child(-n + 3) {
@@ -40,4 +42,43 @@ body {
 
 .cell:nth-last-child(-n+3) {
   border-bottom: none;
+}
+
+.cell.x::before,
+.cell.x::after {
+  content: '';
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+  background-color: black;
+  position: absolute;
+}
+
+.cell.x::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after {
+  transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after {
+  content: '';
+  position: absolute;
+  width: var(--mark-size);
+  height: var(--mark-size);
+  border-radius: 50%;
+  background-color: black;
+}
+
+.cell.circle::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+  background-color: black;
+}
+
+.cell.circle::after {
+  width: calc(var(--mark-size)*0.7);
+  height: calc(var(--mark-size)*0.7);
+  background-color: rgb(172, 172, 96);
 }
