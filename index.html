@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
-  <div class="board circle" id="board">
-    <div class="cell x" data-cell></div>
-    <div class="cell circle" data-cell></div>
+  <div class="board" id="board">
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
@@ -20,7 +22,7 @@
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
   </div>
-  <div class="winning-message">
+  <div class="win-msg">
     <div data-win-text></div>
     <button id="restart-btn">Restart</button>
   </div>
